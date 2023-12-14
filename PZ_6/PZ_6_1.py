@@ -3,6 +3,6 @@
 N = [1, 2, 3, 4, 5]
 k = 0
 m = 0
-l = [x for i, x in enumerate(N, 1) if i < k or i > m]
-print(l)
-print(sum(l) / len(l))
+r = [x for i, x in enumerate(N, 1) if i < k or i > m]
+print(r)
+print(sum(r) / len(r))
