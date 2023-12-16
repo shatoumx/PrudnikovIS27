@@ -11,7 +11,6 @@ def find_longest_word_length(string):
     return longest_word_length
 
 
-# Пример использования
-input_string = "ааааааааа"
+input_string = input('Введите слово: ')
 result = find_longest_word_length(input_string)
 print(result)

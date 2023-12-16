@@ -15,7 +15,6 @@ def sum_of_digits(number):
     return digit_sum
 
 
-# Пример использования функции
 number = int(input("Введите ваше число: "))
 result = sum_of_digits(number)
 print(f"Сумма цифр числа {number} равна {result}")
