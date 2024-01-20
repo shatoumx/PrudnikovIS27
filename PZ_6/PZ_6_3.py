@@ -27,6 +27,6 @@ def find_closest_point(A):
     return closest_point
 
 
-A = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]
+A = [[2, 3, 4, 5, 6], [7, 8, 9, 10, 11]]
 closest_point = find_closest_point(A)
 print("Ближайшая точка:", closest_point)

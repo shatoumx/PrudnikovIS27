@@ -15,6 +15,12 @@ def sum_of_digits(number):
     return digit_sum
 
 
-number = int(input("Введите ваше число: "))
+while True:
+    try:
+        number = int(input("Введите ваше число: "))
+    except ValueError:
+        print('Ошибка')
+        continue
+    break
 result = sum_of_digits(number)
 print(f"Сумма цифр числа {number} равна {result}")
