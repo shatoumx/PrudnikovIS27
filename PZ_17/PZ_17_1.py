@@ -13,6 +13,7 @@ def submit_form():
 root = tk.Tk()
 root.title("Certificate Self Service Portal")
 root.geometry("480x550")
+root.resizable(width=False, height=False)
 
 elements = [
     {"label": "Fill out the form to get a certificate", "widget": ttk.Label(root, font=("Arial", 12))},
