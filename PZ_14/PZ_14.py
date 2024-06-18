@@ -1,13 +1,29 @@
-# В исходном текстовом файле(Dostoevsky.txt) найти все годы деятельности писателя
-# (например, 1821 года, 1837 год, 1843 году и так далее по всему тексту). Посчитать
-# количество полученных элементов.
+# -*- coding: utf-8 -*-
+# РР· РёСЃС…РѕРґРЅРѕРіРѕ С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р° (Dostoevsky.txt) РІС‹Р±СЂР°С‚СЊ Р±Р»РѕРє РёРЅС„РѕСЂРјР°С†РёРё Р·Р° 1857
+# РіРѕРґ Рё РїРѕРјРµСЃС‚РёС‚СЊ РµРµ РІ РЅРѕРІС‹Р№ С‚РµРєСЃС‚РѕРІС‹Р№ С„Р°Р№Р».
 
 import re
 
-with open('Dostoevsky.txt', 'r', encoding='utf-8') as file:
-    text = file.read()
 
-years = re.findall(r'\b\d{4}\b', text)
+def search_paragraph(input_file, year):
+    start_flag = False
+    text = []
 
-print(years)
-print(len(years))
+    with open(input_file, "r", encoding="utf-8") as file:
+        lines = file.readlines()
+
+    for line in lines:
+        if re.search("18", line) and start_flag:
+            break
+
+        if re.search(year, line):
+            start_flag = True
+
+        if start_flag:
+            text.append(line)
+
+    with(open(f'{year}.txt', 'w', encoding="utf-8")) as file:
+        file.writelines(text)
+
+
+search_paragraph("Dostoevsky.txt", "1857")
